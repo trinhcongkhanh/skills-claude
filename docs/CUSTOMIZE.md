@@ -64,6 +64,8 @@ git commit -m "feat: add my-new-skill"
 git tag v1.2.0
 git push origin main --tags
 ```
+Hoặc không cần tag: vào tab **Actions → Release → Run workflow**, nhập version (ví dụ `v1.2.0`).
+
 GitHub Actions (`.github/workflows/release.yml`) sẽ tự validate, đóng gói từng skill thành `.zip` và tạo Release với các file đính kèm.
 
 > Lần đầu dùng Actions trên bản fork: vào tab **Actions** bấm *Enable workflows*; vào Settings → Actions → General → Workflow permissions chọn **Read and write permissions** để workflow tạo được Release.

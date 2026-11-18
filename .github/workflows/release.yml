@@ -1,9 +1,18 @@
 name: Release
 
-# Push a tag like v1.2.0 -> validate -> zip every skill -> create a GitHub Release with the zips attached.
+# Two ways to release:
+#   1. Push a tag like v1.2.0
+#   2. Actions tab -> Release -> Run workflow -> enter the version (the tag is created for you)
+# Then: validate -> zip every skill -> create a GitHub Release with the zips attached.
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag to create, e.g. v1.1.0"
+        required: true
+        default: "v1.1.0"
 
 permissions:
   contents: write
@@ -23,7 +32,7 @@ jobs:
       - name: Create release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.ref_name }}
+          TAG: ${{ inputs.version || github.ref_name }}
         run: |
           cat > notes.md <<'EOF'
           ## Cài đặt / Install
@@ -40,4 +49,4 @@ jobs:
 
           Chi tiết: [docs/INSTALL.md](https://github.com/trinhcongkhanh/skills-claude/blob/main/docs/INSTALL.md) · Thay đổi: [CHANGELOG.md](https://github.com/trinhcongkhanh/skills-claude/blob/main/CHANGELOG.md)
           EOF
-          gh release create "$TAG" dist/*.zip --title "skills-claude $TAG" --notes-file notes.md
+          gh release create "$TAG" dist/*.zip --target "$GITHUB_SHA" --title "skills-claude $TAG" --notes-file notes.md
