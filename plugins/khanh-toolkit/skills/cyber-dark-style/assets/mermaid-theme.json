@@ -1,0 +1,19 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "background": "#0B1220",
+    "primaryColor": "#111A2E",
+    "primaryTextColor": "#E6EDF7",
+    "primaryBorderColor": "#38BDF8",
+    "secondaryColor": "#111A2E",
+    "secondaryBorderColor": "#00E5A0",
+    "tertiaryColor": "#1F2A44",
+    "lineColor": "#94A3B8",
+    "textColor": "#E6EDF7",
+    "clusterBkg": "#0B1220",
+    "clusterBorder": "#1F2A44",
+    "edgeLabelBackground": "#0B1220",
+    "fontFamily": "Inter, Segoe UI, Arial, sans-serif",
+    "fontSize": "14px"
+  }
+}

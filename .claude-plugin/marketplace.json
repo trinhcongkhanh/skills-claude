@@ -1,0 +1,18 @@
+{
+  "name": "khanh-skills",
+  "owner": {
+    "name": "Trinh Cong Khanh"
+  },
+  "metadata": {
+    "description": "Personal skill pack: misunderstanding-proof workflow, Cyber dark visual style, secure code and cyber lab workflow, web/app/extension build standards.",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "khanh-toolkit",
+      "source": "./plugins/khanh-toolkit",
+      "description": "4 skills: khanh-work-protocol, cyber-dark-style, secure-code-and-lab, app-build-standards",
+      "version": "1.1.0"
+    }
+  ]
+}
